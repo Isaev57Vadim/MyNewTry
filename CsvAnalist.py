@@ -2,6 +2,7 @@
 
 import tkinter as tk
 from tkinter.scrolledtext import ScrolledText as st
+from tkinter import messagebox as mb
 
 # Создание главного окна
 window = tk.Tk()
@@ -31,8 +32,12 @@ label_21.grid(row=2, column=1, sticky="w")
 output_text = st(height = 22, width = 50)
 output_text.grid(row=3, column=1, padx=10, pady=10, sticky="w")
 
+# Обработчик нажатия кнопки
+def process_button():
+    mb.showinfo(title=None, message="Готово")
+
 # Создание кнопки
-button=tk.Button(window, text="Прочитать файл")
+button=tk.Button(window, text="Прочитать файл", command=process_button)
 button.grid(row=4, column=1)
 
 # Запуск цикла mainloop
