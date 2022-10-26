@@ -3,6 +3,7 @@
 import tkinter as tk
 from tkinter.scrolledtext import ScrolledText as st
 from tkinter import messagebox as mb
+from tkinter import  filedialog as fd
 
 # Создание главного окна
 window = tk.Tk()
@@ -32,8 +33,14 @@ label_21.grid(row=2, column=1, sticky="w")
 output_text = st(height = 22, width = 50)
 output_text.grid(row=3, column=1, padx=10, pady=10, sticky="w")
 
+# Диалог открытия файла
+def do_dialog():
+    name= fd.askopenfilename()
+    return name
+
 # Обработчик нажатия кнопки
 def process_button():
+    do_dialog()
     mb.showinfo(title=None, message="Готово")
 
 # Создание кнопки
